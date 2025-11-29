@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>خدمات الكتابة والمحتوى الاحترافي - ( محمد احمد ) Mohamed Ahmed</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    
+
+    <style>
+
+        /* ============================ 1. المتغيرات والألوان ============================ */
+
+        :root {
+
+            --primary-color: #0077b6;   /* أزرق مائي جذاب */
+
+            --secondary-color: #00b4d8; /* أزرق سماوي فاتح */
+
+            --accent-color: #00afb9;    /* أخضر مائي للتحويل */
+
+            --text-color: #333;
+
+            --light-bg: #f6f7fb;        /* خلفية فاتحة ومريحة */
+
+            --card-bg: #ffffff;
+
+            --shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+
+            --radius: 12px;
+
+        }
+
+
+
+        /* ============================ 2. التأسيس العام والتجاوب ============================ */
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+
+
+        body {
+
+            font-family: 'Tajawal', sans-serif;
+
+            color: var(--text-color);
+
+            line-height: 1.7;
+
+            background-color: var(--light-bg);
+
+            direction: rtl; 
+
+            text-align: right;
+
+            overflow-x: hidden; 
+
+        }
+
+
+
+        .container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 15px; 
+
+        }
+
+
+
+        h1, h2, h3 {
+
+            margin-bottom: 1rem;
+
+            color: #222;
+
+            font-weight: 800;
+
+        }
+
+
+
+        /* ============================ 3. قسم البطل (Hero Section) ============================ */
+
+        .hero {
+
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+
+            color: white;
+
+            padding: 100px 0;
+
+            text-align: center;
+
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); 
+
+            margin-bottom: 40px;
+
+        }
+
+
+
+        .hero h1 {
+
+            font-size: 2.8rem;
+
+            margin-bottom: 1rem;
+
+            color: white;
+
+            font-weight: 800;
+
+        }
+
+
+
+        .hero p {
+
+            font-size: 1.3rem;
+
+            opacity: 0.95;
+
+            max-width: 700px;
+
+            margin: 0 auto;
+
+        }
+
+
+
+        /* ============================ 4. عنوان الخدمات على اليمين ============================ */
+
+        .section-header {
+
+            margin-bottom: 50px;
+
+            text-align: right; /* يمين */
+
+            padding-right: 15px;
+
+        }
+
+
+
+        .section-header h2 {
+
+            font-size: 2.2rem;
+
+            margin-bottom: 5px;
+
+            display: inline-block;
+
+            position: relative;
+
+        }
+
+        
+
+        .section-header h2::after {
+
+            content: '';
+
+            position: absolute;
+
+            bottom: -5px;
+
+            right: 0;
+
+            width: 100%;
+
+            height: 4px;
+
+            background-color: var(--primary-color);
+
+            border-radius: 2px;
+
+        }
+
+
+
+        /* ============================ 5. قسم الخدمات (Cards) ============================ */
+
+        .services-section {
+
+            padding: 40px 0 60px;
+
+        }
+
+
+
+        .cards-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 30px;
+
+        }
+
+
+
+        .service-card {
+
+            background-color: var(--card-bg);
+
+            padding: 35px;
+
+            border-radius: var(--radius);
+
+            box-shadow: var(--shadow);
+
+            transition: all 0.3s ease;
+
+            text-align: right;
+
+            border-right: 5px solid var(--primary-color); 
+
+        }
+
+
+
+        .service-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+
+        }
+
+
+
+        .service-icon {
+
+            font-size: 3rem;
+
+            color: var(--primary-color);
+
+            margin-bottom: 20px;
+
+            display: block; 
+
+        }
+
+
+
+        .service-card h3 {
+
+            color: var(--secondary-color);
+
+            font-weight: 700;
+
+            margin-bottom: 10px;
+
+        }
+
+        .service-card p {
+
+            font-size: 0.95rem;
+
+            color: #555;
+
+        }
+
+        
+
+        /* ============================ 6. قسم آراء العملاء (Testimonials) ============================ */
+
+        .testimonials-section {
+
+            padding: 60px 0;
+
+            background-color: white;
+
+        }
+
+
+
+        .testimonials-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 30px;
+
+            text-align: center;
+
+        }
+
+
+
+        .testimonial-card {
+
+            background-color: var(--light-bg);
+
+            padding: 25px;
+
+            border-radius: var(--radius);
+
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+
+            border: 1px solid #ddd;
+
+            text-align: right;
+
+            position: relative;
+
+            font-style: italic;
+
+        }
+
+
+
+        .testimonial-card::before {
+
+            content: "\f10d"; /* أيقونة الاقتباس */
+
+            font-family: "Font Awesome Free";
+
+            font-weight: 900;
+
+            position: absolute;
+
+            top: 15px;
+
+            right: 15px;
+
+            font-size: 1.5rem;
+
+            color: var(--secondary-color);
+
+            opacity: 0.6;
+
+        }
+
+
+
+        .testimonial-card p {
+
+            margin: 15px 0 10px;
+
+            font-size: 0.9rem;
+
+            color: #444;
+
+        }
+
+
+
+        .testimonial-card small {
+
+            display: block;
+
+            margin-top: 10px;
+
+            color: var(--primary-color);
+
+            font-weight: 700;
+
+            font-size: 0.95rem;
+
+            text-align: left; /* اسم العميل على اليسار */
+
+        }
+
+
+
+        /* ============================ 7. نموذج الاتصال (Form) ============================ */
+
+        .contact-form-section {
+
+            background-color: var(--primary-color);
+
+            color: white;
+
+            padding: 60px 0;
+
+            margin-top: 50px;
+
+        }
+
+
+
+        .form-title {
+
+            color: white;
+
+            margin-bottom: 30px;
+
+            font-size: 2rem;
+
+            font-weight: 700;
+
+            text-align: center;
+
+        }
+
+
+
+        .contact-form-rectangle {
+
+            background-color: white;
+
+            padding: 40px;
+
+            max-width: 700px;
+
+            margin: 0 auto;
+
+            border-radius: var(--radius);
+
+            box-shadow: var(--shadow);
+
+        }
+
+
+
+        .contact-form-rectangle input,
+
+        .contact-form-rectangle select {
+
+            width: 100%;
+
+            padding: 15px 18px;
+
+            margin-bottom: 25px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 8px;
+
+            font-size: 1rem;
+
+            font-family: 'Tajawal', sans-serif;
+
+            color: var(--text-color);
+
+        }
+
+
+
+        #submitBtn {
+
+            background-color: var(--accent-color); 
+
+            color: white;
+
+            border: none;
+
+            padding: 15px 25px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-size: 1.15rem;
+
+            font-weight: 700;
+
+            width: 100%;
+
+            transition: background-color 0.3s ease;
+
+        }
+
+
+
+        #submitBtn:hover:not(:disabled) {
+
+            background-color: #008f97; 
+
+        }
+
+        
+
+        #submitBtn:disabled {
+
+            background-color: #ccc;
+
+            cursor: not-allowed;
+
+        }
+
+
+
+        .conversion-msg {
+
+            margin-top: 20px;
+
+            padding: 15px;
+
+            background-color: #ffc107; 
+
+            color: #333;
+
+            border-radius: 8px;
+
+            font-weight: 700;
+
+            text-align: center;
+
+        }
+
+
+
+        /* ============================ 8. الفوتر (Footer) والتعديلات المطلوبة ============================ */
+
+        footer {
+
+            background-color: #1a1a1a;
+
+            color: #eee;
+
+            padding: 30px 0 10px;
+
+        }
+
+
+
+        .footer-content {
+
+            display: flex;
+
+            flex-direction: column; /* جعل العناصر تتراص عمودياً */
+
+            align-items: center;    /* توسيط العناصر أفقياً */
+
+            text-align: center;
+
+        }
+
+
+
+        .footer-info {
+
+            margin-bottom: 15px;
+
+        }
+
+        .footer-info h4 {
+
+            color: white;
+
+            margin-bottom: 5px;
+
+            font-size: 1.5rem; /* حجم أكبر للاسم */
+
+        }
+
+        .footer-info p {
+
+            margin-bottom: 10px;
+
+            font-size: 0.9rem;
+
+        }
+
+
+
+        /* توسيط أيقونات التواصل الاجتماعي */
+
+        .social-links {
+
+            margin-top: 10px;
+
+            display: flex;
+
+            gap: 20px;
+
+            justify-content: center; /* توسيط الأيقونات */
+
+            margin-bottom: 20px;
+
+        }
+
+        .social-links a {
+
+            color: white;
+
+            font-size: 2rem;
+
+            transition: color 0.3s;
+
+        }
+
+
+
+        .social-links a:hover {
+
+            color: var(--accent-color);
+
+        }
+
+
+
+        .copyright {
+
+            width: 100%;
+
+            text-align: center;
+
+            margin-top: 20px;
+
+            padding-top: 10px;
+
+            border-top: 1px solid #444;
+
+            font-size: 0.85rem;
+
+        }
+
+        
+
+        /* ============================ 9. التجاوب النهائي (Mobile) ============================ */
+
+        @media (max-width: 768px) {
+
+            .hero { padding: 60px 0; }
+
+            .hero h1 { font-size: 2rem; }
+
+            .hero p { font-size: 1rem; }
+
+            .section-header { text-align: center; } /* توسيط العنوان على الجوال إذا لزم الأمر */
+
+            .section-header h2::after { right: 50%; transform: translateX(50%); }
+
+
+
+            .service-card { padding: 25px; }
+
+            .service-icon { font-size: 2.5rem; }
+
+
+
+            .testimonial-card::before { right: unset; left: 15px; } /* نقل الاقتباس على اليسار في الجوال */
+
+            .testimonial-card small { text-align: right; } /* إعادة اسم العميل على اليمين في الجوال */
+
+
+
+            .contact-form-rectangle { padding: 25px; }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <header class="hero">
+
+        <div class="container">
+
+            <h1>نحو محتوى رقمي دقيق ومستندات احترافية بنظام ATS</h1>
+
+            <p>محرّف ومبرمج يُحوّل أفكارك إلى مستندات منظمة وامتحانات إلكترونية متقدمة.</p>
+
+        </div>
+
+    </header>
+
+
+
+    <section class="services-section">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <h2>خدماتنا</h2>
+
+            </div>
+
+            <div class="cards-grid">
+
+                
+
+                <div class="service-card">
+
+                    <i class="fas fa-keyboard service-icon"></i>
+
+                    <h3>التايبست وكتابة الأوراق</h3>
+
+                    <p>دقة متناهية وسرعة فائقة في تحويل النصوص المكتوبة أو المسموعة إلى صيغ رقمية جاهزة للطباعة والتعديل.</p>
+
+                </div>
+
+
+
+                <div class="service-card">
+
+                    <i class="fas fa-book-open service-icon"></i>
+
+                    <h3>كتابة وصياغة المذكرات</h3>
+
+                    <p>تنظيم وهيكلة المعلومات المعقدة في مذكرات دراسية أو مهنية واضحة ومنسقة باحترافية لتسهيل الدراسة.</p>
+
+                </div>
+
+
+
+                <div class="service-card">
+
+                    <i class="fas fa-laptop-code service-icon"></i>
+
+                    <h3>بناء الامتحانات الإلكترونية</h3>
+
+                    <p>تصميم وتطوير امتحانات تفاعلية ومميزة (ليست جوجل فورم) بمزايا برمجية متقدمة للتقييم الدقيق.</p>
+
+                </div>
+
+
+
+                <div class="service-card">
+
+                    <i class="fas fa-file-invoice service-icon"></i>
+
+                    <h3>تصميم CV بنظام ATS</h3>
+
+                    <p>صياغة سير ذاتية مُحسّنة تتجاوز فلاتر أنظمة تتبع المتقدمين (ATS) وتضمن وصول ملفك لمدير التوظيف.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <section class="testimonials-section">
+
+        <div class="container">
+
+            <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+
+                <h2 style="font-size: 2rem;">آراء عملائنا</h2>
+
+            </div>
+
+            <div class="testimonials-grid">
+
+                
+
+                <div class="testimonial-card">
+
+                    <p>شغل محترم جدا ومواعيد مظبوطة ومفيش غلطة في التنسيق والمراجعة تسلم ايدك بجد</p>
+
+                    <small>محمد عثمان</small>
+
+                </div>
+
+
+
+                <div class="testimonial-card">
+
+                    <p>التجربة ممتازة الامتحان البرمجي كان احترافي جدا والمجهود واضح فرق كبير عن جوجل فورم شكرا جدا</p>
+
+                    <small>يوسف طارق</small>
+
+                </div>
+
+
+
+                <div class="testimonial-card">
+
+                    <p>الـ CV بتاع الـ ATS اتعمل بشكل يجنن ومختلف تماما وحصلت على مقابلة في أقل من أسبوع شغل عالي</p>
+
+                    <small>سارة عصام</small>
+
+                </div>
+
+
+
+                <div class="testimonial-card">
+
+                    <p>التعامل في كتابة المذكرات كان سهل وسريع والملف متنسق ومريح للمذاكرة أنصح بالتعامل معاه بشدة</p>
+
+                    <small>أحمد ناصر</small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="contact-form-section">
+
+        <div class="container">
+
+            <h2 class="form-title">ابدأ مشروعك الآن</h2>
+
+            <form id="contactForm" class="contact-form-rectangle">
+
+                <input type="text" id="name" placeholder="الاسم الكريم" required>
+
+                
+
+                <select id="serviceType" required>
+
+                    <option value="" disabled selected>اختر الخدمة التي تحتاجها...</option>
+
+                    <option value="التايبست وكتابة الأوراق">التايبست وكتابة الأوراق</option>
+
+                    <option value="كتابة وصياغة المذكرات">كتابة وصياغة المذكرات</option>
+
+                    <option value="بناء الامتحانات الإلكترونية">بناء الامتحانات الإلكترونية</option>
+
+                    <option value="تصميم CV بنظام ATS">تصميم CV بنظام ATS</option>
+
+                </select>
+
+                
+
+                <button type="submit" id="submitBtn">أطلب تفاصيل أكثر</button>
+
+            </form>
+
+            <p id="conversionMessage" class="conversion-msg" style="display: none;">جارِ تحويلك إلى الواتساب...</p>
+
+        </div>
+
+    </section>
+
+
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <div class="footer-info">
+
+                <h4>( محمد احمد ) Mohamed Ahmed</h4>
+
+                <p>خبير الكتابة والمحتوى الرقمي والبرمجة</p>
+
+            </div>
+
+
+
+            <div class="social-links">
+
+                <a href="https://www.facebook.com/profile.php?id=61584366861161&mibextid=ZbWKwL" target="_blank" aria-label="فيسبوك"><i class="fab fa-facebook"></i></a>
+
+                <a href="https://wa.me/201157959631" target="_blank" aria-label="واتساب"><i class="fab fa-whatsapp"></i></a>
+
+            </div>
+
+            
+
+            <div class="copyright">
+
+                <p>&copy; 2025 جميع حقوق الطبع والنشر محفوظة.</p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <script>
+
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+
+            event.preventDefault();
+
+
+
+            const name = document.getElementById('name').value.trim();
+
+            const serviceType = document.getElementById('serviceType').value;
+
+            const submitBtn = document.getElementById('submitBtn');
+
+            const conversionMessage = document.getElementById('conversionMessage');
+
+            
+
+            // 1. التحقق من صحة البيانات
+
+            if (!name || serviceType === "") {
+
+                alert("من فضلك، تأكد من إدخال اسمك واختيار الخدمة المطلوبة.");
+
+                return;
+
+            }
+
+
+
+            // 2. تغيير حالة الزر والرسالة
+
+            submitBtn.textContent = 'جارِ تحويلك...';
+
+            submitBtn.disabled = true;
+
+            conversionMessage.style.display = 'block';
+
+
+
+            // 3. تجهيز رسالة الواتساب بالرقم الجديد
+
+            const rawWhatsappNumber = "201157959631"; 
+
+            const message = `أهلاً، أنا ${name}.\nأرغب في الاستفسار عن خدمة: ${serviceType}.\nمحتاج أعرف تفاصيل أكتر؟`;
+
+            
+
+            const encodedMessage = encodeURIComponent(message);
+
+            const whatsappLink = `https://wa.me/${rawWhatsappNumber}?text=${encodedMessage}`;
+
+
+
+            // 4. تطبيق مؤقت الـ 3 ثواني والتحويل
+
+            setTimeout(() => {
+
+                window.location.href = whatsappLink;
+
+
+
+                // إعادة ضبط النموذج والزر بعد التحويل
+
+                setTimeout(() => {
+
+                    submitBtn.textContent = 'أطلب تفاصيل أكثر';
+
+                    submitBtn.disabled = false;
+
+                    conversionMessage.style.display = 'none';
+
+                    document.getElementById('contactForm').reset();
+
+                }, 1000); 
+
+                
+
+            }, 3000); // 3 ثوانٍ
+
+        });
+
+    </script>
+
+</body>
+
+</html> 
+
