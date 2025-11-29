@@ -207,12 +207,12 @@
         }
 
 
-
+        /* تم التعديل هنا لـ 2x2 في وضع الكمبيوتر */
         .cards-grid {
 
             display: grid;
 
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(2, 1fr); /* تم التعديل: عمودين ثابتين */
 
             gap: 30px;
 
@@ -295,12 +295,12 @@
         }
 
 
-
+        /* تم التعديل هنا لـ 2x2 في وضع الكمبيوتر */
         .testimonials-grid {
 
             display: grid;
 
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(2, 1fr); /* تم التعديل: عمودين ثابتين */
 
             gap: 30px;
 
@@ -647,6 +647,12 @@
             .section-header h2::after { right: 50%; transform: translateX(50%); }
 
 
+            /* إعادة التنسيق على الجوال ليتناسب مع العرض (كل بطاقة في صف) */
+            .cards-grid,
+            .testimonials-grid { 
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
 
             .service-card { padding: 25px; }
 
@@ -976,5 +982,4 @@
 
 </body>
 
-</html> 
-
+</html>
